@@ -1,0 +1,497 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3FF3F4FF672E5FBF60BC3D7E /* Pods_ralph_showcase_dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B9537AEC5DC5F3524A43722 /* Pods_ralph_showcase_dev.framework */; };
+		CA483BAF1C68B67F0003BD1C /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA483BAE1C68B67F0003BD1C /* DataService.swift */; };
+		CA9D4ED01C69AA6B00E26978 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D4ECF1C69AA6B00E26978 /* FeedVC.swift */; };
+		CA9D4ED21C69AAE400E26978 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D4ED11C69AAE400E26978 /* PostCell.swift */; };
+		CA9D4ED41C6AF53E00E26978 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9D4ED31C6AF53E00E26978 /* Post.swift */; };
+		CAFE5A631C65AF5700D3DEFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFE5A621C65AF5700D3DEFF /* AppDelegate.swift */; };
+		CAFE5A651C65AF5700D3DEFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFE5A641C65AF5700D3DEFF /* ViewController.swift */; };
+		CAFE5A681C65AF5700D3DEFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAFE5A661C65AF5700D3DEFF /* Main.storyboard */; };
+		CAFE5A6A1C65AF5700D3DEFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAFE5A691C65AF5700D3DEFF /* Assets.xcassets */; };
+		CAFE5A6D1C65AF5700D3DEFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAFE5A6B1C65AF5700D3DEFF /* LaunchScreen.storyboard */; };
+		CAFE5A7C1C65AF9E00D3DEFF /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAFE5A781C65AF9E00D3DEFF /* NotoSans-Bold.ttf */; };
+		CAFE5A7D1C65AF9E00D3DEFF /* NotoSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAFE5A791C65AF9E00D3DEFF /* NotoSans-BoldItalic.ttf */; };
+		CAFE5A7E1C65AF9E00D3DEFF /* NotoSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAFE5A7A1C65AF9E00D3DEFF /* NotoSans-Italic.ttf */; };
+		CAFE5A7F1C65AF9E00D3DEFF /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAFE5A7B1C65AF9E00D3DEFF /* NotoSans-Regular.ttf */; };
+		CAFE5A811C65B35D00D3DEFF /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFE5A801C65B35D00D3DEFF /* MaterialView.swift */; };
+		CAFE5A841C65B4B400D3DEFF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFE5A831C65B4B400D3DEFF /* Constants.swift */; };
+		CAFE5A861C65BB9C00D3DEFF /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFE5A851C65BB9C00D3DEFF /* MaterialButton.swift */; };
+		CAFE5A881C65BF3000D3DEFF /* MaterialTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFE5A871C65BF3000D3DEFF /* MaterialTextField.swift */; };
+		CAFE5A8D1C66596D00D3DEFF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAFE5A8A1C66596D00D3DEFF /* Bolts.framework */; };
+		CAFE5A8E1C66596D00D3DEFF /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAFE5A8B1C66596D00D3DEFF /* FBSDKCoreKit.framework */; };
+		CAFE5A8F1C66596D00D3DEFF /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAFE5A8C1C66596D00D3DEFF /* FBSDKLoginKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3B9537AEC5DC5F3524A43722 /* Pods_ralph_showcase_dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ralph_showcase_dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E4FDC6D6EC8B07EC5E2D3F2 /* Pods-ralph-showcase-dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ralph-showcase-dev.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ralph-showcase-dev/Pods-ralph-showcase-dev.debug.xcconfig"; sourceTree = "<group>"; };
+		6D1E387ABABB621DED7A1751 /* Pods-ralph-showcase-dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ralph-showcase-dev.release.xcconfig"; path = "Pods/Target Support Files/Pods-ralph-showcase-dev/Pods-ralph-showcase-dev.release.xcconfig"; sourceTree = "<group>"; };
+		CA483BAE1C68B67F0003BD1C /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		CA9D4ECF1C69AA6B00E26978 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		CA9D4ED11C69AAE400E26978 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		CA9D4ED31C6AF53E00E26978 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		CAFE5A5F1C65AF5700D3DEFF /* ralph-showcase-dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ralph-showcase-dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAFE5A621C65AF5700D3DEFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CAFE5A641C65AF5700D3DEFF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CAFE5A671C65AF5700D3DEFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CAFE5A691C65AF5700D3DEFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CAFE5A6C1C65AF5700D3DEFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CAFE5A6E1C65AF5700D3DEFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAFE5A781C65AF9E00D3DEFF /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
+		CAFE5A791C65AF9E00D3DEFF /* NotoSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-BoldItalic.ttf"; sourceTree = "<group>"; };
+		CAFE5A7A1C65AF9E00D3DEFF /* NotoSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Italic.ttf"; sourceTree = "<group>"; };
+		CAFE5A7B1C65AF9E00D3DEFF /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
+		CAFE5A801C65B35D00D3DEFF /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		CAFE5A831C65B4B400D3DEFF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		CAFE5A851C65BB9C00D3DEFF /* MaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
+		CAFE5A871C65BF3000D3DEFF /* MaterialTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialTextField.swift; sourceTree = "<group>"; };
+		CAFE5A8A1C66596D00D3DEFF /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		CAFE5A8B1C66596D00D3DEFF /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		CAFE5A8C1C66596D00D3DEFF /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CAFE5A5C1C65AF5700D3DEFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAFE5A8D1C66596D00D3DEFF /* Bolts.framework in Frameworks */,
+				CAFE5A8E1C66596D00D3DEFF /* FBSDKCoreKit.framework in Frameworks */,
+				CAFE5A8F1C66596D00D3DEFF /* FBSDKLoginKit.framework in Frameworks */,
+				3FF3F4FF672E5FBF60BC3D7E /* Pods_ralph_showcase_dev.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2FCC1603F3F668F04C4B6BD2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B9537AEC5DC5F3524A43722 /* Pods_ralph_showcase_dev.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C6CCFC247E84790E75A16E54 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4E4FDC6D6EC8B07EC5E2D3F2 /* Pods-ralph-showcase-dev.debug.xcconfig */,
+				6D1E387ABABB621DED7A1751 /* Pods-ralph-showcase-dev.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CA483BAD1C68B6730003BD1C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CA483BAE1C68B67F0003BD1C /* DataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		CAFE5A561C65AF5700D3DEFF = {
+			isa = PBXGroup;
+			children = (
+				CAFE5A611C65AF5700D3DEFF /* ralph-showcase-dev */,
+				CAFE5A601C65AF5700D3DEFF /* Products */,
+				C6CCFC247E84790E75A16E54 /* Pods */,
+				2FCC1603F3F668F04C4B6BD2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CAFE5A601C65AF5700D3DEFF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CAFE5A5F1C65AF5700D3DEFF /* ralph-showcase-dev.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CAFE5A611C65AF5700D3DEFF /* ralph-showcase-dev */ = {
+			isa = PBXGroup;
+			children = (
+				CA483BAD1C68B6730003BD1C /* Services */,
+				CAFE5A891C66595600D3DEFF /* Frameworks */,
+				CAFE5A821C65B4A800D3DEFF /* Util */,
+				CAFE5A771C65AF7900D3DEFF /* Resources */,
+				CAFE5A761C65AF6E00D3DEFF /* Model */,
+				CAFE5A751C65AF6A00D3DEFF /* View */,
+				CAFE5A741C65AF6400D3DEFF /* Controller */,
+				CAFE5A621C65AF5700D3DEFF /* AppDelegate.swift */,
+				CAFE5A691C65AF5700D3DEFF /* Assets.xcassets */,
+				CAFE5A6B1C65AF5700D3DEFF /* LaunchScreen.storyboard */,
+				CAFE5A6E1C65AF5700D3DEFF /* Info.plist */,
+			);
+			path = "ralph-showcase-dev";
+			sourceTree = "<group>";
+		};
+		CAFE5A741C65AF6400D3DEFF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CAFE5A641C65AF5700D3DEFF /* ViewController.swift */,
+				CA9D4ECF1C69AA6B00E26978 /* FeedVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		CAFE5A751C65AF6A00D3DEFF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CAFE5A661C65AF5700D3DEFF /* Main.storyboard */,
+				CAFE5A801C65B35D00D3DEFF /* MaterialView.swift */,
+				CAFE5A851C65BB9C00D3DEFF /* MaterialButton.swift */,
+				CAFE5A871C65BF3000D3DEFF /* MaterialTextField.swift */,
+				CA9D4ED11C69AAE400E26978 /* PostCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		CAFE5A761C65AF6E00D3DEFF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA9D4ED31C6AF53E00E26978 /* Post.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CAFE5A771C65AF7900D3DEFF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CAFE5A781C65AF9E00D3DEFF /* NotoSans-Bold.ttf */,
+				CAFE5A791C65AF9E00D3DEFF /* NotoSans-BoldItalic.ttf */,
+				CAFE5A7A1C65AF9E00D3DEFF /* NotoSans-Italic.ttf */,
+				CAFE5A7B1C65AF9E00D3DEFF /* NotoSans-Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		CAFE5A821C65B4A800D3DEFF /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				CAFE5A831C65B4B400D3DEFF /* Constants.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		CAFE5A891C66595600D3DEFF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CAFE5A8A1C66596D00D3DEFF /* Bolts.framework */,
+				CAFE5A8B1C66596D00D3DEFF /* FBSDKCoreKit.framework */,
+				CAFE5A8C1C66596D00D3DEFF /* FBSDKLoginKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CAFE5A5E1C65AF5700D3DEFF /* ralph-showcase-dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CAFE5A711C65AF5700D3DEFF /* Build configuration list for PBXNativeTarget "ralph-showcase-dev" */;
+			buildPhases = (
+				F13B7B29CD3BD587C73F2C53 /* Check Pods Manifest.lock */,
+				CAFE5A5B1C65AF5700D3DEFF /* Sources */,
+				CAFE5A5C1C65AF5700D3DEFF /* Frameworks */,
+				CAFE5A5D1C65AF5700D3DEFF /* Resources */,
+				B8526F9C1939F2CBBB5EF3FD /* Embed Pods Frameworks */,
+				A613C617F0EAFB50BFC11051 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ralph-showcase-dev";
+			productName = "ralph-showcase-dev";
+			productReference = CAFE5A5F1C65AF5700D3DEFF /* ralph-showcase-dev.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CAFE5A571C65AF5700D3DEFF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Teradek;
+				TargetAttributes = {
+					CAFE5A5E1C65AF5700D3DEFF = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = CAFE5A5A1C65AF5700D3DEFF /* Build configuration list for PBXProject "ralph-showcase-dev" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CAFE5A561C65AF5700D3DEFF;
+			productRefGroup = CAFE5A601C65AF5700D3DEFF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CAFE5A5E1C65AF5700D3DEFF /* ralph-showcase-dev */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CAFE5A5D1C65AF5700D3DEFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAFE5A7C1C65AF9E00D3DEFF /* NotoSans-Bold.ttf in Resources */,
+				CAFE5A6D1C65AF5700D3DEFF /* LaunchScreen.storyboard in Resources */,
+				CAFE5A7D1C65AF9E00D3DEFF /* NotoSans-BoldItalic.ttf in Resources */,
+				CAFE5A7E1C65AF9E00D3DEFF /* NotoSans-Italic.ttf in Resources */,
+				CAFE5A6A1C65AF5700D3DEFF /* Assets.xcassets in Resources */,
+				CAFE5A681C65AF5700D3DEFF /* Main.storyboard in Resources */,
+				CAFE5A7F1C65AF9E00D3DEFF /* NotoSans-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A613C617F0EAFB50BFC11051 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ralph-showcase-dev/Pods-ralph-showcase-dev-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8526F9C1939F2CBBB5EF3FD /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ralph-showcase-dev/Pods-ralph-showcase-dev-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F13B7B29CD3BD587C73F2C53 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CAFE5A5B1C65AF5700D3DEFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CAFE5A881C65BF3000D3DEFF /* MaterialTextField.swift in Sources */,
+				CA483BAF1C68B67F0003BD1C /* DataService.swift in Sources */,
+				CAFE5A811C65B35D00D3DEFF /* MaterialView.swift in Sources */,
+				CAFE5A651C65AF5700D3DEFF /* ViewController.swift in Sources */,
+				CA9D4ED01C69AA6B00E26978 /* FeedVC.swift in Sources */,
+				CA9D4ED21C69AAE400E26978 /* PostCell.swift in Sources */,
+				CAFE5A631C65AF5700D3DEFF /* AppDelegate.swift in Sources */,
+				CAFE5A841C65B4B400D3DEFF /* Constants.swift in Sources */,
+				CAFE5A861C65BB9C00D3DEFF /* MaterialButton.swift in Sources */,
+				CA9D4ED41C6AF53E00E26978 /* Post.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CAFE5A661C65AF5700D3DEFF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CAFE5A671C65AF5700D3DEFF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CAFE5A6B1C65AF5700D3DEFF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CAFE5A6C1C65AF5700D3DEFF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CAFE5A6F1C65AF5700D3DEFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CAFE5A701C65AF5700D3DEFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CAFE5A721C65AF5700D3DEFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E4FDC6D6EC8B07EC5E2D3F2 /* Pods-ralph-showcase-dev.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ralph-showcase-dev",
+				);
+				INFOPLIST_FILE = "ralph-showcase-dev/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.teradek.ralph-showcase-dev";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CAFE5A731C65AF5700D3DEFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D1E387ABABB621DED7A1751 /* Pods-ralph-showcase-dev.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ralph-showcase-dev",
+				);
+				INFOPLIST_FILE = "ralph-showcase-dev/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.teradek.ralph-showcase-dev";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CAFE5A5A1C65AF5700D3DEFF /* Build configuration list for PBXProject "ralph-showcase-dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAFE5A6F1C65AF5700D3DEFF /* Debug */,
+				CAFE5A701C65AF5700D3DEFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CAFE5A711C65AF5700D3DEFF /* Build configuration list for PBXNativeTarget "ralph-showcase-dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CAFE5A721C65AF5700D3DEFF /* Debug */,
+				CAFE5A731C65AF5700D3DEFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CAFE5A571C65AF5700D3DEFF /* Project object */;
+}

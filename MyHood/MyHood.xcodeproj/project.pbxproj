@@ -1,0 +1,348 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CA2C71721C4DDA57007158ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2C71711C4DDA57007158ED /* AppDelegate.swift */; };
+		CA2C71741C4DDA57007158ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2C71731C4DDA57007158ED /* ViewController.swift */; };
+		CA2C71771C4DDA57007158ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA2C71751C4DDA57007158ED /* Main.storyboard */; };
+		CA2C71791C4DDA57007158ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA2C71781C4DDA57007158ED /* Assets.xcassets */; };
+		CA2C717C1C4DDA57007158ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA2C717A1C4DDA57007158ED /* LaunchScreen.storyboard */; };
+		CA2C71851C4DDABD007158ED /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2C71841C4DDABD007158ED /* Post.swift */; };
+		CA2C71881C4DF3EC007158ED /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2C71871C4DF3EC007158ED /* PostCell.swift */; };
+		CA2C718B1C4DFA70007158ED /* AddPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2C718A1C4DFA70007158ED /* AddPostVC.swift */; };
+		CA2C718E1C4E5CEC007158ED /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA2C718D1C4E5CEC007158ED /* DataService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CA2C716E1C4DDA57007158ED /* MyHood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHood.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA2C71711C4DDA57007158ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CA2C71731C4DDA57007158ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CA2C71761C4DDA57007158ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CA2C71781C4DDA57007158ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CA2C717B1C4DDA57007158ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CA2C717D1C4DDA57007158ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA2C71841C4DDABD007158ED /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		CA2C71871C4DF3EC007158ED /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		CA2C718A1C4DFA70007158ED /* AddPostVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPostVC.swift; sourceTree = "<group>"; };
+		CA2C718D1C4E5CEC007158ED /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CA2C716B1C4DDA57007158ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CA2C71651C4DDA57007158ED = {
+			isa = PBXGroup;
+			children = (
+				CA2C71701C4DDA57007158ED /* MyHood */,
+				CA2C716F1C4DDA57007158ED /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CA2C716F1C4DDA57007158ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA2C716E1C4DDA57007158ED /* MyHood.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CA2C71701C4DDA57007158ED /* MyHood */ = {
+			isa = PBXGroup;
+			children = (
+				CA2C718C1C4E5CDE007158ED /* Services */,
+				CA2C71831C4DDAA7007158ED /* Model */,
+				CA2C71861C4DF3CA007158ED /* View */,
+				CA2C71891C4DF9BB007158ED /* Controller */,
+				CA2C71711C4DDA57007158ED /* AppDelegate.swift */,
+				CA2C71781C4DDA57007158ED /* Assets.xcassets */,
+				CA2C717D1C4DDA57007158ED /* Info.plist */,
+			);
+			path = MyHood;
+			sourceTree = "<group>";
+		};
+		CA2C71831C4DDAA7007158ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CA2C71841C4DDABD007158ED /* Post.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CA2C71861C4DF3CA007158ED /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CA2C71871C4DF3EC007158ED /* PostCell.swift */,
+				CA2C71751C4DDA57007158ED /* Main.storyboard */,
+				CA2C717A1C4DDA57007158ED /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		CA2C71891C4DF9BB007158ED /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CA2C71731C4DDA57007158ED /* ViewController.swift */,
+				CA2C718A1C4DFA70007158ED /* AddPostVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		CA2C718C1C4E5CDE007158ED /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CA2C718D1C4E5CEC007158ED /* DataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CA2C716D1C4DDA57007158ED /* MyHood */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA2C71801C4DDA57007158ED /* Build configuration list for PBXNativeTarget "MyHood" */;
+			buildPhases = (
+				CA2C716A1C4DDA57007158ED /* Sources */,
+				CA2C716B1C4DDA57007158ED /* Frameworks */,
+				CA2C716C1C4DDA57007158ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MyHood;
+			productName = MyHood;
+			productReference = CA2C716E1C4DDA57007158ED /* MyHood.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CA2C71661C4DDA57007158ED /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Teradek;
+				TargetAttributes = {
+					CA2C716D1C4DDA57007158ED = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = K7DKUWDUHW;
+					};
+				};
+			};
+			buildConfigurationList = CA2C71691C4DDA57007158ED /* Build configuration list for PBXProject "MyHood" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CA2C71651C4DDA57007158ED;
+			productRefGroup = CA2C716F1C4DDA57007158ED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CA2C716D1C4DDA57007158ED /* MyHood */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CA2C716C1C4DDA57007158ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA2C717C1C4DDA57007158ED /* LaunchScreen.storyboard in Resources */,
+				CA2C71791C4DDA57007158ED /* Assets.xcassets in Resources */,
+				CA2C71771C4DDA57007158ED /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CA2C716A1C4DDA57007158ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA2C71851C4DDABD007158ED /* Post.swift in Sources */,
+				CA2C71741C4DDA57007158ED /* ViewController.swift in Sources */,
+				CA2C718B1C4DFA70007158ED /* AddPostVC.swift in Sources */,
+				CA2C718E1C4E5CEC007158ED /* DataService.swift in Sources */,
+				CA2C71721C4DDA57007158ED /* AppDelegate.swift in Sources */,
+				CA2C71881C4DF3EC007158ED /* PostCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CA2C71751C4DDA57007158ED /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA2C71761C4DDA57007158ED /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CA2C717A1C4DDA57007158ED /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA2C717B1C4DDA57007158ED /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CA2C717E1C4DDA57007158ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CA2C717F1C4DDA57007158ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CA2C71811C4DDA57007158ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = MyHood/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.teradek.MyHood;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Debug;
+		};
+		CA2C71821C4DDA57007158ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = MyHood/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.teradek.MyHood;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CA2C71691C4DDA57007158ED /* Build configuration list for PBXProject "MyHood" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA2C717E1C4DDA57007158ED /* Debug */,
+				CA2C717F1C4DDA57007158ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA2C71801C4DDA57007158ED /* Build configuration list for PBXNativeTarget "MyHood" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA2C71811C4DDA57007158ED /* Debug */,
+				CA2C71821C4DDA57007158ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CA2C71661C4DDA57007158ED /* Project object */;
+}
