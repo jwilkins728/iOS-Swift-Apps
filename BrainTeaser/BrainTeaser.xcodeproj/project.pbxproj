@@ -15,6 +15,7 @@
 		CA0608241C966671000E2312 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA0608221C966671000E2312 /* LaunchScreen.storyboard */; };
 		CA0608341C966A8A000E2312 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0608331C966A8A000E2312 /* CustomTextField.swift */; };
 		CA0608361C966CAE000E2312 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0608351C966CAE000E2312 /* CustomButton.swift */; };
+		CA0608391C9712E3000E2312 /* AnimationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0608381C9712E3000E2312 /* AnimationEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		CA06082B1C966762000E2312 /* BrainTeaser-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BrainTeaser-Bridging-Header.h"; sourceTree = "<group>"; };
 		CA0608331C966A8A000E2312 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		CA0608351C966CAE000E2312 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		CA0608381C9712E3000E2312 /* AnimationEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 		CA0608181C966671000E2312 /* BrainTeaser */ = {
 			isa = PBXGroup;
 			children = (
+				CA0608371C9712D5000E2312 /* Util */,
 				CA0608301C966A5D000E2312 /* Controller */,
 				CA06082F1C966A58000E2312 /* View */,
 				CA0608191C966671000E2312 /* AppDelegate.swift */,
@@ -110,6 +113,14 @@
 				CA06081B1C966671000E2312 /* LoginVC.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		CA0608371C9712D5000E2312 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				CA0608381C9712E3000E2312 /* AnimationEngine.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +248,7 @@
 				CA0608361C966CAE000E2312 /* CustomButton.swift in Sources */,
 				CA06081C1C966671000E2312 /* LoginVC.swift in Sources */,
 				CA06081A1C966671000E2312 /* AppDelegate.swift in Sources */,
+				CA0608391C9712E3000E2312 /* AnimationEngine.swift in Sources */,
 				CA0608341C966A8A000E2312 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
