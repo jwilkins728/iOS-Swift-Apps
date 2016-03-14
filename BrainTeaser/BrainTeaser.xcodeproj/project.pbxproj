@@ -16,6 +16,9 @@
 		CA0608341C966A8A000E2312 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0608331C966A8A000E2312 /* CustomTextField.swift */; };
 		CA0608361C966CAE000E2312 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0608351C966CAE000E2312 /* CustomButton.swift */; };
 		CA0608391C9712E3000E2312 /* AnimationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0608381C9712E3000E2312 /* AnimationEngine.swift */; };
+		CA06083B1C972DEF000E2312 /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06083A1C972DEF000E2312 /* GameVC.swift */; };
+		CA06083D1C9730AF000E2312 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA06083C1C9730AF000E2312 /* Card.swift */; };
+		CA06083F1C9730BE000E2312 /* Card.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA06083E1C9730BE000E2312 /* Card.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		CA0608331C966A8A000E2312 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		CA0608351C966CAE000E2312 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		CA0608381C9712E3000E2312 /* AnimationEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationEngine.swift; sourceTree = "<group>"; };
+		CA06083A1C972DEF000E2312 /* GameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
+		CA06083C1C9730AF000E2312 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		CA06083E1C9730BE000E2312 /* Card.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Card.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,8 @@
 			children = (
 				CA0608331C966A8A000E2312 /* CustomTextField.swift */,
 				CA0608351C966CAE000E2312 /* CustomButton.swift */,
+				CA06083C1C9730AF000E2312 /* Card.swift */,
+				CA06083E1C9730BE000E2312 /* Card.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -111,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				CA06081B1C966671000E2312 /* LoginVC.swift */,
+				CA06083A1C972DEF000E2312 /* GameVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -187,6 +196,7 @@
 				CA0608241C966671000E2312 /* LaunchScreen.storyboard in Resources */,
 				CA0608211C966671000E2312 /* Assets.xcassets in Resources */,
 				CA06081F1C966671000E2312 /* Main.storyboard in Resources */,
+				CA06083F1C9730BE000E2312 /* Card.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,8 +257,10 @@
 			files = (
 				CA0608361C966CAE000E2312 /* CustomButton.swift in Sources */,
 				CA06081C1C966671000E2312 /* LoginVC.swift in Sources */,
+				CA06083D1C9730AF000E2312 /* Card.swift in Sources */,
 				CA06081A1C966671000E2312 /* AppDelegate.swift in Sources */,
 				CA0608391C9712E3000E2312 /* AnimationEngine.swift in Sources */,
+				CA06083B1C972DEF000E2312 /* GameVC.swift in Sources */,
 				CA0608341C966A8A000E2312 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
