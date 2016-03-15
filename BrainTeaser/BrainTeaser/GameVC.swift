@@ -14,8 +14,11 @@ class GameVC: UIViewController {
     @IBOutlet weak var yesBtn: CustomButton!
     @IBOutlet weak var noBtn: CustomButton!
     @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var timerLbl: UILabel!
     
     var currentCard: Card!
+    var timer = NSTimer()
+    var counter: NSTimeInterval!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,8 @@ class GameVC: UIViewController {
         self.view.addSubview(currentCard)
     }
 
+    // MARK: Button Actions
+    
     @IBAction func yesPressed(sender: UIButton) {
         if (sender.titleLabel?.text == "YES") {
             checkAnswer()
@@ -40,6 +45,8 @@ class GameVC: UIViewController {
         checkAnswer()
         showNextCard()
     }
+    
+    // MARK: Show Game Cards
     
     func showNextCard() {
         
@@ -60,6 +67,7 @@ class GameVC: UIViewController {
             if noBtn.hidden {
                 noBtn.hidden = false
                 yesBtn.setTitle("YES", forState: .Normal)
+                setTimer()
             }
             
             AnimationEngine.animateToPosition(next, position: AnimationEngine.screenCenterPosition, completion: { (anim: POPAnimation!, finished: Bool) -> Void in
@@ -75,6 +83,29 @@ class GameVC: UIViewController {
     
     func checkAnswer() {
         
+    }
+    
+    // MARK: Timer
+    
+    func setTimer() {
+        counter = NSTimeInterval(60)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("onTimer"), userInfo: nil, repeats: true)
+    }
+    
+    func timerString(time: NSTimeInterval) -> String {
+        let minutes = (Int(time) / 60) % 60
+        let seconds = Int(time) % 60
+        return String(format:"%d:%02d", minutes, seconds)
+    }
+    
+    func onTimer() {
+        if (counter > 0) {
+            counter = counter - 1
+            timerLbl.text = timerString(counter)
+        } else {
+            counter = 0
+            timer.invalidate()
+        }
     }
     
 }

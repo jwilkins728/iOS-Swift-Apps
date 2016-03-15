@@ -149,11 +149,21 @@
                                     <action selector="noPressed:" destination="5az-Mi-2Ib" eventType="touchUpInside" id="Yud-Y1-B19"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember this image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Drk-Ol-Heu">
-                                <rect key="frame" x="20" y="90" width="280" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember this image" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Drk-Ol-Heu">
+                                <rect key="frame" x="20" y="80" width="280" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="6ba-Ho-Zm7"/>
+                                    <constraint firstAttribute="height" constant="40" id="6ba-Ho-Zm7"/>
                                     <constraint firstAttribute="width" constant="280" id="mET-3l-Ctk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qw3-1Q-iwv">
+                                <rect key="frame" x="96" y="461" width="129" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GZU-GK-LWF"/>
+                                    <constraint firstAttribute="width" constant="129" id="i3Q-sZ-tKo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -163,16 +173,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Drk-Ol-Heu" firstAttribute="centerX" secondItem="3n1-Sz-bok" secondAttribute="centerX" id="10A-jd-Mgz"/>
-                            <constraint firstItem="Drk-Ol-Heu" firstAttribute="top" secondItem="4IT-LS-wcT" secondAttribute="bottom" constant="70" id="6Df-b0-ytY"/>
+                            <constraint firstItem="Drk-Ol-Heu" firstAttribute="top" secondItem="4IT-LS-wcT" secondAttribute="bottom" constant="60" id="6Df-b0-ytY"/>
                             <constraint firstItem="MKl-Bm-tL7" firstAttribute="trailing" secondItem="3n1-Sz-bok" secondAttribute="trailingMargin" id="IbM-iu-h2H"/>
+                            <constraint firstItem="tfD-Z2-Rea" firstAttribute="top" secondItem="qw3-1Q-iwv" secondAttribute="bottom" constant="15" id="UW4-4m-Pry"/>
                             <constraint firstItem="tfD-Z2-Rea" firstAttribute="leading" secondItem="3n1-Sz-bok" secondAttribute="leadingMargin" id="cw3-aC-nBf"/>
                             <constraint firstItem="dyb-oP-JIA" firstAttribute="top" secondItem="tfD-Z2-Rea" secondAttribute="bottom" constant="20" id="lDP-e6-0ZS"/>
                             <constraint firstItem="dyb-oP-JIA" firstAttribute="top" secondItem="MKl-Bm-tL7" secondAttribute="bottom" constant="20" id="miv-9H-apC"/>
+                            <constraint firstItem="qw3-1Q-iwv" firstAttribute="centerX" secondItem="3n1-Sz-bok" secondAttribute="centerX" id="nqb-sj-wjo"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="noBtn" destination="tfD-Z2-Rea" id="kLE-hd-tkB"/>
+                        <outlet property="timerLbl" destination="qw3-1Q-iwv" id="tic-WO-mPX"/>
                         <outlet property="titleLbl" destination="Drk-Ol-Heu" id="rNH-gz-KFf"/>
                         <outlet property="yesBtn" destination="MKl-Bm-tL7" id="Ako-Ag-u99"/>
                     </connections>
