@@ -17,8 +17,12 @@ class GameVC: UIViewController {
     @IBOutlet weak var timerLbl: UILabel!
     
     var currentCard: Card!
+    var previousCard: String?
     var timer = NSTimer()
     var counter: NSTimeInterval!
+    
+    var correctAnswer: Int = 0
+    var incorrectAnswer: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,18 +36,26 @@ class GameVC: UIViewController {
     
     @IBAction func yesPressed(sender: UIButton) {
         if (sender.titleLabel?.text == "YES") {
-            checkAnswer()
+            checkAnswer(sender)
         } else {
             titleLbl.text = "Does this card match the previous card?"
         }
-        
+        previousCard = currentCard.currentShape
         showNextCard()
+        
+        print("Correct: \(correctAnswer)")
+        print("Incorrect: \(incorrectAnswer)")
         
     }
     
     @IBAction func noPressed(sender: UIButton) {
-        checkAnswer()
+        previousCard = currentCard.currentShape
         showNextCard()
+        checkAnswer(sender)
+        
+        print("Correct: \(correctAnswer)")
+        print("Incorrect: \(incorrectAnswer)")
+
     }
     
     // MARK: Show Game Cards
@@ -81,7 +93,36 @@ class GameVC: UIViewController {
         return NSBundle.mainBundle().loadNibNamed("Card", owner: self, options: nil)[0] as? Card
     }
     
-    func checkAnswer() {
+    // MARK: Validate Answer
+    
+    func checkAnswer(sender: UIButton) {
+        
+        // Button Tag 1 = Yes, Button Tag 2 = No
+        
+        switch sender.tag {
+        case 1:
+            if (previousCard == currentCard.currentShape) {
+                correctAnswer += 1
+            } else {
+                incorrectAnswer += 1
+            }
+            break;
+        case 2:
+            if (previousCard != currentCard.currentShape) {
+                correctAnswer += 1
+            } else {
+                incorrectAnswer += 1
+            }
+        default: ()
+            break;
+        }
+    }
+    
+    func displayAnswerFeedback() {
+        
+    }
+    
+    func gameOver() {
         
     }
     
