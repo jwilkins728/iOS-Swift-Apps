@@ -11,15 +11,20 @@ import pop
 
 class GameVC: UIViewController {
 
+    // MARK: Outlets
+    
     @IBOutlet weak var yesBtn: CustomButton!
     @IBOutlet weak var noBtn: CustomButton!
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var timerLbl: UILabel!
     
+    //MARK: Variables
+    
     var currentCard: Card!
     var previousCard: String?
     var timer = NSTimer()
     var counter: NSTimeInterval!
+    var scoreCard: Score!
     
     var correctAnswer: Int = 0
     var incorrectAnswer: Int = 0
@@ -30,6 +35,9 @@ class GameVC: UIViewController {
         currentCard = createCardFromNib()
         currentCard.center = AnimationEngine.screenCenterPosition
         self.view.addSubview(currentCard)
+        
+        scoreCard = createScoreCard()
+        
     }
 
     // MARK: Button Actions
@@ -37,10 +45,15 @@ class GameVC: UIViewController {
     @IBAction func yesPressed(sender: UIButton) {
         if (sender.titleLabel?.text == "YES") {
             checkAnswer(sender)
+            previousCard = currentCard.currentShape
+        } else if (sender.titleLabel?.text == "RESTART") {
+            titleLbl.text = "Does this card match the previous card?"
+            scoreCard.removeFromSuperview()
+            correctAnswer = 0
+            incorrectAnswer = 0
         } else {
             titleLbl.text = "Does this card match the previous card?"
         }
-        previousCard = currentCard.currentShape
         showNextCard()
         
         print("Correct: \(correctAnswer)")
@@ -64,6 +77,7 @@ class GameVC: UIViewController {
         
         if let current = currentCard {
             let cardToRemove = current
+            currentCard.answerImage.hidden = true
             currentCard = nil
             
             AnimationEngine.animateToPosition(cardToRemove, position: AnimationEngine.offScreenLeftPosition, completion: { (anim: POPAnimation!, finished: Bool) -> Void in
@@ -75,6 +89,7 @@ class GameVC: UIViewController {
             next.center = AnimationEngine.offScreenRightPosition
             self.view.addSubview(next)
             currentCard = next
+            next.answerImage.hidden = true
             
             if noBtn.hidden {
                 noBtn.hidden = false
@@ -103,15 +118,24 @@ class GameVC: UIViewController {
         case 1:
             if (previousCard == currentCard.currentShape) {
                 correctAnswer += 1
+                currentCard.answerImage.hidden = false
+                currentCard.answerImage.image = UIImage(named: "correct")
             } else {
                 incorrectAnswer += 1
+                currentCard.answerImage.hidden = false
+                currentCard.answerImage.image = UIImage(named: "incorrect")
             }
             break;
         case 2:
             if (previousCard != currentCard.currentShape) {
                 correctAnswer += 1
+                currentCard.answerImage.hidden = false
+                currentCard.answerImage.image = UIImage(named: "correct")
             } else {
                 incorrectAnswer += 1
+                currentCard.answerImage.hidden = false
+                currentCard.answerImage.image = UIImage(named: "incorrect")
+
             }
         default: ()
             break;
@@ -122,14 +146,44 @@ class GameVC: UIViewController {
         
     }
     
+    // MARK: Game Over and Final Score Card
+    
+    func createScoreCard() -> Score? {
+        return NSBundle.mainBundle().loadNibNamed("Score", owner: self, options: nil)[0] as? Score
+    }
+    
     func gameOver() {
         
+        noBtn.hidden = true
+        yesBtn.setTitle("RESTART", forState: .Normal)
+        titleLbl.text = "Game Score"
+
+        
+        if let current = currentCard {
+            let cardToRemove = current
+            currentCard = nil            
+            AnimationEngine.animateToPosition(cardToRemove, position: AnimationEngine.offScreenLeftPosition, completion: { (anim: POPAnimation!, finished: Bool) -> Void in
+                cardToRemove.removeFromSuperview()
+            })
+        }
+        
+        scoreCard.center = AnimationEngine.offScreenRightPosition
+        self.view.addSubview(scoreCard)
+            
+        scoreCard.correctScore.text = "\(correctAnswer)"
+        scoreCard.incorrectScore.text = "\(incorrectAnswer)"
+        scoreCard.totalScore.text = "\(correctAnswer + incorrectAnswer)"
+            
+        AnimationEngine.animateToPosition(scoreCard, position: AnimationEngine.screenCenterPosition, completion: { (anim: POPAnimation!, finished: Bool) -> Void in
+                
+        })
+
     }
     
     // MARK: Timer
     
     func setTimer() {
-        counter = NSTimeInterval(60)
+        counter = NSTimeInterval(10)
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("onTimer"), userInfo: nil, repeats: true)
     }
     
@@ -145,8 +199,10 @@ class GameVC: UIViewController {
             timerLbl.text = timerString(counter)
         } else {
             counter = 0
+            gameOver()
             timer.invalidate()
         }
     }
+
     
 }

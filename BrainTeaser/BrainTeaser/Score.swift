@@ -1,21 +1,18 @@
 //
-//  Card.swift
+//  Score.swift
 //  BrainTeaser
 //
-//  Created by Ralph Cachero on 3/14/16.
+//  Created by Ralph Cachero on 3/15/16.
 //  Copyright © 2016 Teradek. All rights reserved.
 //
 
 import UIKit
 
-class Card: UIView {
-
-    let shapes = ["shape1", "shape2", "shape3"]
+class Score: UIView {
     
-    var currentShape: String!
-    
-    @IBOutlet weak var shapeImage: UIImageView!
-    @IBOutlet weak var answerImage: UIImageView!
+    @IBOutlet weak var correctScore: UILabel!
+    @IBOutlet weak var incorrectScore: UILabel!
+    @IBOutlet weak var totalScore: UILabel!
     
     @IBInspectable var cornerRadius: CGFloat = 3.0 {
         didSet {
@@ -30,7 +27,7 @@ class Card: UIView {
     
     override func awakeFromNib() {
         setupView()
-        selectShape()
+        
     }
 
     func setupView() {
@@ -41,10 +38,4 @@ class Card: UIView {
         self.layer.shadowColor = UIColor(red: 157.0/255.0, green: 157.0/255.0, blue: 157.0/255.0, alpha: 1.0).CGColor
         self.setNeedsLayout()
     }
-    
-    func selectShape() {
-        currentShape = shapes[Int(arc4random_uniform(3))]
-        shapeImage.image = UIImage(named: currentShape)
-    }
-    
 }
