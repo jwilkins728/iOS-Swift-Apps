@@ -46,29 +46,32 @@ class GameVC: UIViewController {
         if (sender.titleLabel?.text == "YES") {
             checkAnswer(sender)
             previousCard = currentCard.currentShape
+            showNextCard()
         } else if (sender.titleLabel?.text == "RESTART") {
-            titleLbl.text = "Does this card match the previous card?"
+            titleLbl.text = "Remember this image"
             scoreCard.removeFromSuperview()
             correctAnswer = 0
             incorrectAnswer = 0
+            yesBtn.setTitle("START", forState: .Normal)
+            
+            currentCard = createCardFromNib()
+            currentCard.center = AnimationEngine.screenCenterPosition
+            self.view.addSubview(currentCard)
+            timerLbl.text = "1:00"
+            
         } else {
             titleLbl.text = "Does this card match the previous card?"
+            previousCard = currentCard.currentShape
+            showNextCard()
         }
-        showNextCard()
-        
-        print("Correct: \(correctAnswer)")
-        print("Incorrect: \(incorrectAnswer)")
         
     }
     
     @IBAction func noPressed(sender: UIButton) {
+        checkAnswer(sender)
         previousCard = currentCard.currentShape
         showNextCard()
-        checkAnswer(sender)
         
-        print("Correct: \(correctAnswer)")
-        print("Incorrect: \(incorrectAnswer)")
-
     }
     
     // MARK: Show Game Cards
@@ -77,19 +80,25 @@ class GameVC: UIViewController {
         
         if let current = currentCard {
             let cardToRemove = current
-            currentCard.answerImage.hidden = true
             currentCard = nil
             
+            let time = dispatch_time(DISPATCH_TIME_NOW, Int64(Double(0.2) * Double(NSEC_PER_SEC)))
+            
+            dispatch_after(time, dispatch_get_main_queue()) {
             AnimationEngine.animateToPosition(cardToRemove, position: AnimationEngine.offScreenLeftPosition, completion: { (anim: POPAnimation!, finished: Bool) -> Void in
                 cardToRemove.removeFromSuperview()
             })
+            }
         }
         
         if let next = createCardFromNib() {
-            next.center = AnimationEngine.offScreenRightPosition
-            self.view.addSubview(next)
+            
+            let time = dispatch_time(DISPATCH_TIME_NOW, Int64(Double(0.3) * Double(NSEC_PER_SEC)))
+            dispatch_after(time, dispatch_get_main_queue()) {
+                next.center = AnimationEngine.offScreenRightPosition
+                self.view.addSubview(next)
+            }
             currentCard = next
-            next.answerImage.hidden = true
             
             if noBtn.hidden {
                 noBtn.hidden = false
@@ -140,10 +149,6 @@ class GameVC: UIViewController {
         default: ()
             break;
         }
-    }
-    
-    func displayAnswerFeedback() {
-        
     }
     
     // MARK: Game Over and Final Score Card
