@@ -188,7 +188,7 @@ class GameVC: UIViewController {
     // MARK: Timer
     
     func setTimer() {
-        counter = NSTimeInterval(10)
+        counter = NSTimeInterval(60)
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("onTimer"), userInfo: nil, repeats: true)
     }
     
