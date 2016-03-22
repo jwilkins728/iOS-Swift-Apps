@@ -27,7 +27,7 @@ class MonsterImg: UIImageView {
         
         var imgArray = [UIImage]()
         
-        for var x = 1; x < 4; x++ {
+        for x in 1 ..< 4 {
             let img = UIImage(named: "idle\(x).png")
             imgArray.append(img!)
         }
@@ -46,7 +46,7 @@ class MonsterImg: UIImageView {
         
         var imgArray = [UIImage]()
         
-        for var x = 1; x < 5; x++ {
+        for x in 1 ..< 5 {
             let img = UIImage(named: "dead\(x).png")
             imgArray.append(img!)
         }
