@@ -21,18 +21,39 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        attemptFetch()
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if let sections = fetchedResultsController.sections {
+            return sections.count
+        }
         return 0
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let sections = fetchedResultsController.sections {
+            let sectionInfo = sections[section]
+            return sectionInfo.numberOfObjects
+        }
         return 0
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 132
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCellWithIdentifier("ItemCell", forIndexPath: indexPath) as! ItemCell
+        configureCell(cell, indexPath: indexPath)
+        return cell
+    }
+    
+    func configureCell(cell: ItemCell, indexPath: NSIndexPath) {
+        if let item = fetchedResultsController.objectAtIndexPath(indexPath) as? Item {
+            cell.configureCell(item)
+        }
     }
     
     func attemptFetch() {
@@ -82,6 +103,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         case .Update:
             if let indexPath = indexPath {
                 let cell = tableView.cellForRowAtIndexPath(indexPath) as! ItemCell
+                configureCell(cell, indexPath: indexPath)
             }
             break
         case .Move:
