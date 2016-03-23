@@ -7,6 +7,9 @@
  - Facebook Pop
  - Grand Central Dispatch
 
+<h5>Icons provided by</h5>
+ - Huu Nguyen - [Noun Project](https://thenounproject.com/huu/)
+
 <h5>Screenshots</h5>
 <p align="center">
   <img src="/BrainTeaser/Screenshots/Login_Screen.png" alt="Login Screen" width="200px" height="356px">
