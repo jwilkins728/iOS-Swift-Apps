@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA03B5351CA242E60009682D /* ItemDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA03B5341CA242E60009682D /* ItemDetailsVC.swift */; };
+		CA03B5371CA246D20009682D /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA03B5361CA246D20009682D /* CustomTextField.swift */; };
 		CA07565F1C9F7A2D00D75A72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA07565E1C9F7A2D00D75A72 /* AppDelegate.swift */; };
 		CA0756611C9F7A2D00D75A72 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0756601C9F7A2D00D75A72 /* MainVC.swift */; };
 		CA0756641C9F7A2D00D75A72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA0756621C9F7A2D00D75A72 /* Main.storyboard */; };
@@ -26,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA03B5341CA242E60009682D /* ItemDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailsVC.swift; sourceTree = "<group>"; };
+		CA03B5361CA246D20009682D /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		CA07565B1C9F7A2D00D75A72 /* SomeJunk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SomeJunk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA07565E1C9F7A2D00D75A72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CA0756601C9F7A2D00D75A72 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				CA0756601C9F7A2D00D75A72 /* MainVC.swift */,
+				CA03B5341CA242E60009682D /* ItemDetailsVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 			children = (
 				CA0756871C9FA42200D75A72 /* MaterialView.swift */,
 				CA0756891C9FA69600D75A72 /* ItemCell.swift */,
+				CA03B5361CA246D20009682D /* CustomTextField.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -208,11 +214,13 @@
 				CA07568A1C9FA69600D75A72 /* ItemCell.swift in Sources */,
 				CA0756811C9F99B900D75A72 /* Item+CoreDataProperties.swift in Sources */,
 				CA0756611C9F7A2D00D75A72 /* MainVC.swift in Sources */,
+				CA03B5351CA242E60009682D /* ItemDetailsVC.swift in Sources */,
 				CA0756821C9F99B900D75A72 /* Item.swift in Sources */,
 				CA07567C1C9F99B900D75A72 /* ItemType.swift in Sources */,
 				CA07567D1C9F99B900D75A72 /* Image+CoreDataProperties.swift in Sources */,
 				CA0756671C9F7A2D00D75A72 /* SomeJunk.xcdatamodeld in Sources */,
 				CA07565F1C9F7A2D00D75A72 /* AppDelegate.swift in Sources */,
+				CA03B5371CA246D20009682D /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +370,7 @@
 				CA0756721C9F7A2D00D75A72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

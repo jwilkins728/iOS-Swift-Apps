@@ -22,6 +22,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         tableView.delegate = self
         tableView.dataSource = self
         
+        //generateTestData()
         attemptFetch()
     }
 
@@ -114,6 +115,40 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
                 tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             }
             break
+        }
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let objs = fetchedResultsController.fetchedObjects where objs.count > 0 {
+            let item = objs[indexPath.row] as! Item
+            
+            performSegueWithIdentifier("ItemDetailsVC", sender: item)
+        }
+    }
+    
+    func generateTestData() {
+        let item = NSEntityDescription.insertNewObjectForEntityForName("Item", inManagedObjectContext: ad.managedObjectContext) as! Item
+        item.title = "Cool LEGO Set"
+        item.price = 45.99
+        item.details = "This is a super cool Star Wars LEGO set with 1000 pieces"
+        
+        let item2 = NSEntityDescription.insertNewObjectForEntityForName("Item", inManagedObjectContext: ad.managedObjectContext) as! Item
+        item2.title = "He-Man vs Skeletor"
+        item2.price = 99.99
+        item2.details = "Skeletor is the man! (kind of)"
+        
+        let item3 = NSEntityDescription.insertNewObjectForEntityForName("Item", inManagedObjectContext: ad.managedObjectContext) as! Item
+        item3.title = "Audi R8"
+        item3.price = 108000
+        item3.details = "I'm probably going to die in this car. But I'll buy it anyway"
+        
+        ad.saveContext()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ItemDetailsVC" {
+            let vc = segue.destinationViewController as! ItemDetailsVC
+            vc.itemToEdit = sender as? Item
         }
     }
 
