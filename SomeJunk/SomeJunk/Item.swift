@@ -14,7 +14,6 @@ class Item: NSManagedObject {
 
     override func awakeFromInsert() {
         super.awakeFromInsert()
-        
         self.created = NSDate()
     }
     

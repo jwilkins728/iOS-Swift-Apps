@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     @IBOutlet weak var storePicker: UIPickerView!
     @IBOutlet weak var titleField: CustomTextField!
@@ -31,8 +31,26 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             loadItemData()
         }
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+        titleField.delegate = self
+        priceField.delegate = self
+        detailsField.delegate = self
+        
         //generateTestStores()
 
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        titleField.resignFirstResponder()
+        priceField.resignFirstResponder()
+        detailsField.resignFirstResponder()
+        return true
     }
     
     func loadItemData() {
@@ -64,7 +82,6 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
                     
                 } while (index < stores.count)
             }
-            
         }
     }
     
@@ -96,6 +113,8 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         print(row)
     }
     
+    // MARK: Test Data
+    
     func generateTestStores() {
         let store1 = NSEntityDescription.insertNewObjectForEntityForName("Store", inManagedObjectContext: ad.managedObjectContext) as! Store
         store1.name = "Amazon"
@@ -117,6 +136,8 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         
         ad.saveContext() 
     }
+    
+    // MARK: IBActions
 
     @IBAction func savePressed(sender: AnyObject) {
         
@@ -147,6 +168,7 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         ad.saveContext()
         self.navigationController?.popViewControllerAnimated(true)
     }
+    
     @IBAction func deletePressed(sender: AnyObject) {
         
         if itemToEdit != nil {

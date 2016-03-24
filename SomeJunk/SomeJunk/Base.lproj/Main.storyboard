@@ -24,13 +24,13 @@
                                     <constraint firstAttribute="height" constant="28" id="5Gj-QV-34q"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Items"/>
+                                    <segment title="Stores"/>
                                 </segments>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="113" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ne7-aT-A4N">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="132" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ne7-aT-A4N">
                                 <rect key="frame" x="20" y="108" width="560" height="492"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="132" id="tB4-vN-pUA" customClass="ItemCell" customModule="SomeJunk" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="560" height="132"/>
@@ -39,16 +39,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="560" height="132"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJt-Lf-xmF">
+                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EJt-Lf-xmF">
                                                     <rect key="frame" x="0.0" y="0.0" width="560" height="132"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filler" translatesAutoresizingMaskIntoConstraints="NO" id="XJ9-H7-2MA">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="filler" translatesAutoresizingMaskIntoConstraints="NO" id="XJ9-H7-2MA">
                                                             <rect key="frame" x="8" y="8" width="100" height="116"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="100" id="RIJ-H0-bbb"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LEGO Star Wars Set" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="952-tW-5Xg">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="LEGO Star Wars Set" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="952-tW-5Xg">
                                                             <rect key="frame" x="116" y="8" width="436" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="51u-Q7-jG6"/>
@@ -57,7 +57,7 @@
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$49.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZl-f3-85N">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$49.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZl-f3-85N">
                                                             <rect key="frame" x="116" y="37" width="436" height="21"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="21" id="hzD-r0-efi"/>
@@ -66,7 +66,7 @@
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I really like this cool LEGO star wars set because it makes me feel like a kid..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99t-oL-x6I">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="I really like this cool LEGO star wars set because it makes me feel like a kid..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99t-oL-x6I">
                                                             <rect key="frame" x="116" y="66" width="436" height="58"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -94,13 +94,24 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
+                                                <constraint firstItem="EJt-Lf-xmF" firstAttribute="leading" secondItem="gW6-4s-uPo" secondAttribute="leadingMargin" id="1OE-cE-zuv"/>
+                                                <constraint firstItem="EJt-Lf-xmF" firstAttribute="top" secondItem="gW6-4s-uPo" secondAttribute="topMargin" id="1jx-pv-AEq"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="EJt-Lf-xmF" secondAttribute="bottom" id="DPW-uV-eMN"/>
                                                 <constraint firstAttribute="trailing" secondItem="EJt-Lf-xmF" secondAttribute="trailing" id="L4d-iS-Quz"/>
                                                 <constraint firstAttribute="bottom" secondItem="EJt-Lf-xmF" secondAttribute="bottom" id="ZOj-Ct-x8Q"/>
                                                 <constraint firstItem="EJt-Lf-xmF" firstAttribute="top" secondItem="gW6-4s-uPo" secondAttribute="top" id="ghb-HZ-gaC"/>
                                                 <constraint firstItem="EJt-Lf-xmF" firstAttribute="leading" secondItem="gW6-4s-uPo" secondAttribute="leading" id="hA7-iK-HPO"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="EJt-Lf-xmF" secondAttribute="trailing" id="kSc-84-UdD"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="L4d-iS-Quz"/>
+                                                    <exclude reference="ZOj-Ct-x8Q"/>
+                                                    <exclude reference="ghb-HZ-gaC"/>
+                                                    <exclude reference="hA7-iK-HPO"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
@@ -115,17 +126,36 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ne7-aT-A4N" firstAttribute="trailing" secondItem="UqP-eC-s0X" secondAttribute="trailing" id="2vM-pw-kGc"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ne7-aT-A4N" secondAttribute="bottom" id="3Jv-nj-lQb"/>
                             <constraint firstItem="UqP-eC-s0X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="4Qs-1I-aeS"/>
                             <constraint firstItem="UqP-eC-s0X" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="7Mu-Su-uyj"/>
                             <constraint firstItem="UqP-eC-s0X" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="8fd-Te-DHC"/>
+                            <constraint firstItem="ne7-aT-A4N" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="EGe-k2-BWk"/>
                             <constraint firstItem="ne7-aT-A4N" firstAttribute="top" secondItem="UqP-eC-s0X" secondAttribute="bottom" constant="8" symbolic="YES" id="ZfT-Kg-UP8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ne7-aT-A4N" secondAttribute="bottom" id="abg-oq-xvp"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ne7-aT-A4N" secondAttribute="bottom" id="hfW-F9-Ko0"/>
                             <constraint firstItem="ne7-aT-A4N" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="jT0-Wr-4nD"/>
                             <constraint firstItem="ne7-aT-A4N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="kO1-ef-0AM"/>
+                            <constraint firstItem="ne7-aT-A4N" firstAttribute="top" secondItem="UqP-eC-s0X" secondAttribute="bottom" constant="8" id="mtG-Em-EgZ"/>
                             <constraint firstItem="ne7-aT-A4N" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="nDH-HY-Gk9"/>
                             <constraint firstItem="ne7-aT-A4N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="noh-bH-03t"/>
+                            <constraint firstItem="ne7-aT-A4N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="tw5-NU-kno"/>
+                            <constraint firstItem="ne7-aT-A4N" firstAttribute="leading" secondItem="UqP-eC-s0X" secondAttribute="leading" id="xDW-9G-XV2"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2vM-pw-kGc"/>
+                                <exclude reference="ZfT-Kg-UP8"/>
+                                <exclude reference="jT0-Wr-4nD"/>
+                                <exclude reference="kO1-ef-0AM"/>
+                                <exclude reference="nDH-HY-Gk9"/>
+                                <exclude reference="noh-bH-03t"/>
+                                <exclude reference="xDW-9G-XV2"/>
+                                <exclude reference="3Jv-nj-lQb"/>
+                                <exclude reference="hfW-F9-Ko0"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="in1-HB-uz2">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="32x-Xz-064">

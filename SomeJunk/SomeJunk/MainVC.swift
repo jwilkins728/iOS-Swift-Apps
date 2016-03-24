@@ -25,6 +25,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         //generateTestData()
         attemptFetch()
     }
+    
+    // MARK: TableView
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         if let sections = fetchedResultsController.sections {
@@ -51,11 +53,23 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         return cell
     }
     
-    func configureCell(cell: ItemCell, indexPath: NSIndexPath) {
-        if let item = fetchedResultsController.objectAtIndexPath(indexPath) as? Item {
-            cell.configureCell(item)
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let objs = fetchedResultsController.fetchedObjects where objs.count > 0 {
+            let item = objs[indexPath.row] as! Item
+            
+            performSegueWithIdentifier("ItemDetailsVC", sender: item)
         }
     }
+    
+    func controllerWillChangeContent(controller: NSFetchedResultsController) {
+        tableView.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(controller: NSFetchedResultsController) {
+        tableView.endUpdates()
+    }
+    
+    // MARK: Fetch data from CoreData and Configure Cell
     
     func attemptFetch() {
         setFetchedResults()
@@ -80,12 +94,10 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         fetchedResultsController = controller
     }
     
-    func controllerWillChangeContent(controller: NSFetchedResultsController) {
-        tableView.beginUpdates()
-    }
-    
-    func controllerDidChangeContent(controller: NSFetchedResultsController) {
-        tableView.endUpdates()
+    func configureCell(cell: ItemCell, indexPath: NSIndexPath) {
+        if let item = fetchedResultsController.objectAtIndexPath(indexPath) as? Item {
+            cell.configureCell(item)
+        }
     }
     
     func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
@@ -118,13 +130,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         }
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if let objs = fetchedResultsController.fetchedObjects where objs.count > 0 {
-            let item = objs[indexPath.row] as! Item
-            
-            performSegueWithIdentifier("ItemDetailsVC", sender: item)
-        }
-    }
+    // MARK: Test Data
     
     func generateTestData() {
         let item = NSEntityDescription.insertNewObjectForEntityForName("Item", inManagedObjectContext: ad.managedObjectContext) as! Item
@@ -134,7 +140,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         let item2 = NSEntityDescription.insertNewObjectForEntityForName("Item", inManagedObjectContext: ad.managedObjectContext) as! Item
         item2.title = "He-Man vs Skeletor"
-        item2.price = 99.99
+        item2.price = 89.99
         item2.details = "Skeletor is the man! (kind of)"
         
         let item3 = NSEntityDescription.insertNewObjectForEntityForName("Item", inManagedObjectContext: ad.managedObjectContext) as! Item
@@ -144,6 +150,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         ad.saveContext()
     }
+    
+    // MARK: Segue
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ItemDetailsVC" {
