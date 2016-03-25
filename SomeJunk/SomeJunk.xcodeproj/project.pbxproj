@@ -25,6 +25,7 @@
 		CA0756821C9F99B900D75A72 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA07567A1C9F99B900D75A72 /* Item.swift */; };
 		CA0756881C9FA42200D75A72 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0756871C9FA42200D75A72 /* MaterialView.swift */; };
 		CA07568A1C9FA69600D75A72 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0756891C9FA69600D75A72 /* ItemCell.swift */; };
+		CA4B2D081CA49E9100A3D136 /* StoreDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B2D071CA49E9100A3D136 /* StoreDetailsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		CA07567A1C9F99B900D75A72 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		CA0756871C9FA42200D75A72 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		CA0756891C9FA69600D75A72 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		CA4B2D071CA49E9100A3D136 /* StoreDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreDetailsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 			children = (
 				CA0756601C9F7A2D00D75A72 /* MainVC.swift */,
 				CA03B5341CA242E60009682D /* ItemDetailsVC.swift */,
+				CA4B2D071CA49E9100A3D136 /* StoreDetailsVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				CA03B5351CA242E60009682D /* ItemDetailsVC.swift in Sources */,
 				CA0756821C9F99B900D75A72 /* Item.swift in Sources */,
 				CA07567C1C9F99B900D75A72 /* ItemType.swift in Sources */,
+				CA4B2D081CA49E9100A3D136 /* StoreDetailsVC.swift in Sources */,
 				CA07567D1C9F99B900D75A72 /* Image+CoreDataProperties.swift in Sources */,
 				CA0756671C9F7A2D00D75A72 /* SomeJunk.xcdatamodeld in Sources */,
 				CA07565F1C9F7A2D00D75A72 /* AppDelegate.swift in Sources */,

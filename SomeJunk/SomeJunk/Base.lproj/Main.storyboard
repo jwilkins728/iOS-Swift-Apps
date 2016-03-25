@@ -27,6 +27,9 @@
                                     <segment title="Items"/>
                                     <segment title="Stores"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlActionChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="KBJ-H0-Dtg"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="132" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ne7-aT-A4N">
                                 <rect key="frame" x="20" y="108" width="560" height="492"/>
@@ -160,7 +163,7 @@
                     <navigationItem key="navigationItem" id="in1-HB-uz2">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="32x-Xz-064">
                             <connections>
-                                <segue destination="Zon-xZ-K7s" kind="show" identifier="ItemDetailsVCNew" id="9ve-1m-1gq"/>
+                                <segue destination="Zon-xZ-K7s" kind="show" identifier="ItemDetailsVCNew" id="iep-vO-Jkj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -232,7 +235,7 @@
                                 </userDefinedRuntimeAttributes>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Store" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FEI-Pf-DJd">
-                                <rect key="frame" x="16" y="241" width="288" height="21"/>
+                                <rect key="frame" x="16" y="241" width="103" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="U3W-Xv-wlI"/>
                                 </constraints>
@@ -264,17 +267,39 @@
                                     <action selector="savePressed:" destination="Zon-xZ-K7s" eventType="touchUpInside" id="DoL-FJ-T0U"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLo-0I-iao">
+                                <rect key="frame" x="214" y="241" width="90" height="21"/>
+                                <color key="backgroundColor" red="0.066666666669999999" green="0.57254901960000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="gZJ-3S-OSi"/>
+                                    <constraint firstAttribute="width" constant="90" id="yLt-gY-w9t"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="ADD STORE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addStorePressed:" destination="Zon-xZ-K7s" eventType="touchUpInside" id="IbD-5d-wYk"/>
+                                    <segue destination="N9L-50-fJA" kind="show" identifier="StoreDetailsVC" id="w85-wt-bZj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="TYM-6N-Inc" firstAttribute="leading" secondItem="kIO-gF-Ozx" secondAttribute="leadingMargin" id="4qx-VX-6il"/>
                             <constraint firstItem="7SR-KD-xp8" firstAttribute="top" secondItem="ujj-gH-Wmg" secondAttribute="bottom" constant="20" id="Box-h7-3T5"/>
                             <constraint firstItem="O24-vn-cDa" firstAttribute="top" secondItem="ssD-FG-I5l" secondAttribute="bottom" constant="21" id="CRD-sJ-eH2"/>
+                            <constraint firstItem="ssD-FG-I5l" firstAttribute="top" secondItem="tLo-0I-iao" secondAttribute="bottom" constant="8" id="CqY-Tq-OnL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tLo-0I-iao" secondAttribute="trailing" id="EGO-vc-VXa"/>
                             <constraint firstItem="7SR-KD-xp8" firstAttribute="leading" secondItem="TYM-6N-Inc" secondAttribute="trailing" constant="8" id="GGY-oo-Yxs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FEI-Pf-DJd" secondAttribute="trailing" id="HwV-6U-ErQ"/>
                             <constraint firstItem="FEI-Pf-DJd" firstAttribute="top" secondItem="Ug4-ty-Gd5" secondAttribute="bottom" constant="20" id="I5f-Ki-NLF"/>
                             <constraint firstItem="ssD-FG-I5l" firstAttribute="leading" secondItem="kIO-gF-Ozx" secondAttribute="leadingMargin" id="JIe-24-NIh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7SR-KD-xp8" secondAttribute="trailing" id="L4W-YD-15g"/>
+                            <constraint firstItem="tLo-0I-iao" firstAttribute="top" secondItem="Ug4-ty-Gd5" secondAttribute="bottom" constant="20" id="NEg-Lo-P2O"/>
                             <constraint firstItem="TYM-6N-Inc" firstAttribute="top" secondItem="r46-kT-ZA4" secondAttribute="bottom" constant="8" id="Ts6-r8-QUe"/>
                             <constraint firstItem="Ug4-ty-Gd5" firstAttribute="leading" secondItem="kIO-gF-Ozx" secondAttribute="leadingMargin" id="Vx5-ET-rNO"/>
                             <constraint firstItem="6h6-vN-3dn" firstAttribute="top" secondItem="O24-vn-cDa" secondAttribute="bottom" constant="20" id="c6c-JU-V5e"/>
@@ -285,10 +310,16 @@
                             <constraint firstItem="ujj-gH-Wmg" firstAttribute="trailing" secondItem="kIO-gF-Ozx" secondAttribute="trailingMargin" id="oEI-Kz-sKD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="O24-vn-cDa" secondAttribute="trailing" id="pqY-1A-HSh"/>
                             <constraint firstItem="Ug4-ty-Gd5" firstAttribute="top" secondItem="TYM-6N-Inc" secondAttribute="bottom" constant="20" id="q6q-5W-QY0"/>
+                            <constraint firstItem="FEI-Pf-DJd" firstAttribute="trailing" secondItem="TYM-6N-Inc" secondAttribute="trailing" id="tng-oH-KP0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ug4-ty-Gd5" secondAttribute="trailing" id="uHb-Xa-jK7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ssD-FG-I5l" secondAttribute="trailing" id="wSm-yX-b3x"/>
                             <constraint firstItem="ujj-gH-Wmg" firstAttribute="top" secondItem="r46-kT-ZA4" secondAttribute="bottom" constant="8" id="zgh-s9-s1X"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="HwV-6U-ErQ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Item" id="WYo-ir-y8q">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="Zlh-BN-GmC">
@@ -308,7 +339,80 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d6G-S8-1PG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1722" y="337"/>
+            <point key="canvasLocation" x="1646" y="337"/>
+        </scene>
+        <!--Store-->
+        <scene sceneID="wcg-X6-ZD4">
+            <objects>
+                <viewController id="N9L-50-fJA" customClass="StoreDetailsVC" customModule="SomeJunk" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="47D-D8-PNU"/>
+                        <viewControllerLayoutGuide type="bottom" id="LZr-uQ-CL2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VD9-j5-qSq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5aR-hn-pQq">
+                                <rect key="frame" x="16" y="507" width="288" height="41"/>
+                                <color key="backgroundColor" red="0.066666666669999999" green="0.57254901960000004" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="V9n-uv-wEx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
+                                <state key="normal" title="SAVE STORE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="savePressed:" destination="N9L-50-fJA" eventType="touchUpInside" id="sEg-S2-zuR"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="place" translatesAutoresizingMaskIntoConstraints="NO" id="IIx-3H-Te0">
+                                <rect key="frame" x="16" y="72" width="288" height="141"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="141" id="5dV-vM-YYC"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Store Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xgW-Mb-v84" customClass="CustomTextField" customModule="SomeJunk" customModuleProvider="target">
+                                <rect key="frame" x="16" y="230" width="288" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="HJB-Im-wUZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="materialDesign" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IIx-3H-Te0" firstAttribute="top" secondItem="47D-D8-PNU" secondAttribute="bottom" constant="8" id="7ix-Bf-p5u"/>
+                            <constraint firstItem="xgW-Mb-v84" firstAttribute="trailing" secondItem="VD9-j5-qSq" secondAttribute="trailingMargin" id="AW6-bM-IDq"/>
+                            <constraint firstItem="IIx-3H-Te0" firstAttribute="leading" secondItem="VD9-j5-qSq" secondAttribute="leadingMargin" id="EtE-9F-Bpe"/>
+                            <constraint firstItem="xgW-Mb-v84" firstAttribute="top" secondItem="IIx-3H-Te0" secondAttribute="bottom" constant="17" id="bB2-TY-F3e"/>
+                            <constraint firstItem="5aR-hn-pQq" firstAttribute="leading" secondItem="VD9-j5-qSq" secondAttribute="leadingMargin" id="bTd-xG-fyz"/>
+                            <constraint firstItem="5aR-hn-pQq" firstAttribute="trailing" secondItem="VD9-j5-qSq" secondAttribute="trailingMargin" id="bjy-AE-fib"/>
+                            <constraint firstItem="LZr-uQ-CL2" firstAttribute="top" secondItem="5aR-hn-pQq" secondAttribute="bottom" constant="20" id="e5s-6E-8Yk"/>
+                            <constraint firstItem="xgW-Mb-v84" firstAttribute="leading" secondItem="VD9-j5-qSq" secondAttribute="leadingMargin" id="ifD-aI-6FR"/>
+                            <constraint firstItem="IIx-3H-Te0" firstAttribute="trailing" secondItem="VD9-j5-qSq" secondAttribute="trailingMargin" id="l2M-2n-UX6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Store" id="InD-dU-bqG"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="nameField" destination="xgW-Mb-v84" id="u01-QG-c1E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nsZ-Fk-4hc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2111" y="337"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sIN-ne-yju">
@@ -334,6 +438,6 @@
         <image name="place" width="448" height="384"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yOx-v3-rLO"/>
+        <segue reference="iep-vO-Jkj"/>
     </inferredMetricsTieBreakers>
 </document>

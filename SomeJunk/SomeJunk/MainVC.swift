@@ -26,13 +26,24 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         attemptFetch()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     // MARK: TableView
-
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         if let sections = fetchedResultsController.sections {
             return sections.count
         }
         return 0
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if let sections = fetchedResultsController.sections {
+            return sections[section].name
+        }
+        return "Unassigned Items"
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,9 +66,9 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if let objs = fetchedResultsController.fetchedObjects where objs.count > 0 {
-            let item = objs[indexPath.row] as! Item
             
-            performSegueWithIdentifier("ItemDetailsVC", sender: item)
+                let item = fetchedResultsController.objectAtIndexPath(indexPath) as! Item
+                performSegueWithIdentifier("ItemDetailsVC", sender: item)
         }
     }
     
@@ -69,38 +80,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         tableView.endUpdates()
     }
     
-    // MARK: Fetch data from CoreData and Configure Cell
-    
-    func attemptFetch() {
-        setFetchedResults()
-        
-        do {
-          try self.fetchedResultsController.performFetch()
-        } catch {
-            let error = error as NSError
-            print("\(error), \(error.userInfo)")
-        }
-    }
-    
-    func setFetchedResults() {
-        let section: String? = segment.selectedSegmentIndex == 1 ? "store.name" : nil
-        let fetchRequest = NSFetchRequest(entityName: "Item")
-        let sortDescriptor = NSSortDescriptor(key: "created", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        
-        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: ad.managedObjectContext, sectionNameKeyPath: section, cacheName: nil)
-        
-        controller.delegate = self
-        fetchedResultsController = controller
-    }
-    
-    func configureCell(cell: ItemCell, indexPath: NSIndexPath) {
-        if let item = fetchedResultsController.objectAtIndexPath(indexPath) as? Item {
-            cell.configureCell(item)
-        }
-    }
-    
     func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+        
         
         switch(type) {
         case .Insert:
@@ -130,6 +111,61 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         }
     }
     
+    func controller(controller: NSFetchedResultsController, didChangeSection sectionInfo: NSFetchedResultsSectionInfo, atIndex sectionIndex: Int, forChangeType type: NSFetchedResultsChangeType) {
+        
+        switch(type) {
+        case .Insert:
+            let sectionIndexSet = NSIndexSet(index: sectionIndex)
+            tableView.insertSections(sectionIndexSet, withRowAnimation: .Fade)
+        case .Delete:
+            let sectionIndexSet = NSIndexSet(index: sectionIndex)
+            tableView.deleteSections(sectionIndexSet, withRowAnimation: .Fade)
+        default:
+            ""
+        }
+        
+    }
+    
+    func controller(controller: NSFetchedResultsController, sectionIndexTitleForSectionName sectionName: String) -> String? {
+        return sectionName
+    }
+    
+    // MARK: Fetch data from CoreData and Configure Cell
+    
+    func attemptFetch() {
+        setFetchedResults()
+        
+        do {
+          try self.fetchedResultsController.performFetch()
+        } catch {
+            let error = error as NSError
+            print("\(error), \(error.userInfo)")
+        }
+    }
+    
+    func setFetchedResults() {
+        let section: String? = segment.selectedSegmentIndex == 1 ? "store.name" : nil
+        
+        
+        let fetchRequest = NSFetchRequest(entityName: "Item")
+        
+        
+        let sortDescriptor = NSSortDescriptor(key: "created", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: ad.managedObjectContext, sectionNameKeyPath: section, cacheName: nil)
+        
+        controller.delegate = self
+        fetchedResultsController = controller
+    }
+    
+    func configureCell(cell: ItemCell, indexPath: NSIndexPath) {
+        if let item = fetchedResultsController.objectAtIndexPath(indexPath) as? Item {
+            cell.configureCell(item)
+        }
+    }
+    
+    
     // MARK: Test Data
     
     func generateTestData() {
@@ -158,6 +194,13 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
             let vc = segue.destinationViewController as! ItemDetailsVC
             vc.itemToEdit = sender as? Item
         }
+    }
+    
+    // MARK: IBActions
+    
+    @IBAction func segmentedControlActionChanged(sender: AnyObject) {
+        attemptFetch()
+        tableView.reloadData()
     }
 
 }

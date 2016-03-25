@@ -25,12 +25,6 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         storePicker.delegate = self
         storePicker.dataSource = self
         
-        getStores()
-        
-        if itemToEdit != nil {
-            loadItemData()
-        }
-        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
@@ -38,8 +32,18 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         priceField.delegate = self
         detailsField.delegate = self
         
+        getStores()
+        
+        if itemToEdit != nil {
+            loadItemData()
+        }
+        
         //generateTestStores()
 
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        getStores()
     }
     
     func dismissKeyboard() {
@@ -179,4 +183,7 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
 
     }
     
+    @IBAction func addStorePressed(sender: AnyObject) {
+        
+    }
 }
