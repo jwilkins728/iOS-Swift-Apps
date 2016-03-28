@@ -8,8 +8,8 @@
 
 <h5>Screenshots</h5>
 <p align="center">
-  <img src="/SomeJunk/screenshots/item_screen.png" alt="Login Screen" width="200px" height="356px">
-  <img src="/SomeJunk/screenshots/store_screen.png" alt="First Image" width="200px" height="356px">
-  <img src="/SomeJunk/screenshots/create_item.png" alt="Correct Guess" width="200px" height="356px">
+  <img src="/SomeJunk/screenshots/items_screen.png" alt="Items Screen" width="200px" height="356px">
+  <img src="/SomeJunk/screenshots/stores_screen.png" alt="Stores Image" width="200px" height="356px">
+  <img src="/SomeJunk/screenshots/create_item.png" alt="Create Item" width="200px" height="356px">
 </p>
  
