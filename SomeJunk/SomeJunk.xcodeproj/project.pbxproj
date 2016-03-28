@@ -26,6 +26,7 @@
 		CA0756881C9FA42200D75A72 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0756871C9FA42200D75A72 /* MaterialView.swift */; };
 		CA07568A1C9FA69600D75A72 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0756891C9FA69600D75A72 /* ItemCell.swift */; };
 		CA4B2D081CA49E9100A3D136 /* StoreDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B2D071CA49E9100A3D136 /* StoreDetailsVC.swift */; };
+		CA4B2D0A1CA5E70400A3D136 /* UIImageToNSDataTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4B2D091CA5E70400A3D136 /* UIImageToNSDataTransformer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		CA0756871C9FA42200D75A72 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
 		CA0756891C9FA69600D75A72 /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		CA4B2D071CA49E9100A3D136 /* StoreDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreDetailsVC.swift; sourceTree = "<group>"; };
+		CA4B2D091CA5E70400A3D136 /* UIImageToNSDataTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageToNSDataTransformer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		CA07565D1C9F7A2D00D75A72 /* SomeJunk */ = {
 			isa = PBXGroup;
 			children = (
+				CA4B2D0B1CA5E70900A3D136 /* Util */,
 				CA0756861C9FA40B00D75A72 /* View */,
 				CA0756851C9FA0DB00D75A72 /* Controller */,
 				CA0756831C9F99C500D75A72 /* Model */,
@@ -136,6 +139,14 @@
 				CA03B5361CA246D20009682D /* CustomTextField.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		CA4B2D0B1CA5E70900A3D136 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				CA4B2D091CA5E70400A3D136 /* UIImageToNSDataTransformer.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -223,6 +234,7 @@
 				CA4B2D081CA49E9100A3D136 /* StoreDetailsVC.swift in Sources */,
 				CA07567D1C9F99B900D75A72 /* Image+CoreDataProperties.swift in Sources */,
 				CA0756671C9F7A2D00D75A72 /* SomeJunk.xcdatamodeld in Sources */,
+				CA4B2D0A1CA5E70400A3D136 /* UIImageToNSDataTransformer.swift in Sources */,
 				CA07565F1C9F7A2D00D75A72 /* AppDelegate.swift in Sources */,
 				CA03B5371CA246D20009682D /* CustomTextField.swift in Sources */,
 			);

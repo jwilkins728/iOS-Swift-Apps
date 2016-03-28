@@ -9,14 +9,27 @@
 import UIKit
 import CoreData
 
-class StoreDetailsVC: UIViewController {
+class StoreDetailsVC: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nameField: CustomTextField!
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        nameField.delegate = self
     }
+    
+    // MARK: Dismiss Keyboard
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        nameField.resignFirstResponder()
+        return true
+    }
+
     
     @IBAction func savePressed(sender: AnyObject) {
         

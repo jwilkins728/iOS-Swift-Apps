@@ -15,6 +15,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     @IBOutlet weak var segment: UISegmentedControl!
     
     var fetchedResultsController: NSFetchedResultsController!
+    var imagePicker: UIImagePickerController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,13 +23,23 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         tableView.delegate = self
         tableView.dataSource = self
         
-        //generateTestData()
+        
         attemptFetch()
+        
+//        if let objs = fetchedResultsController.fetchedObjects?.count {
+//            if objs == 0 {
+//                generateTestData()
+//            }
+//        }
+        
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        attemptFetch()
+        tableView.reloadData()
     }
+    
     
     // MARK: TableView
     
@@ -169,15 +180,21 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     // MARK: Test Data
     
     func generateTestData() {
+        
+        let image = NSEntityDescription.insertNewObjectForEntityForName("Image", inManagedObjectContext: ad.managedObjectContext) as! Image
+        image.setItemImage(UIImage(named: "filler")!)
+        
         let item = NSEntityDescription.insertNewObjectForEntityForName("Item", inManagedObjectContext: ad.managedObjectContext) as! Item
         item.title = "Cool LEGO Set"
         item.price = 45.99
         item.details = "This is a super cool Star Wars LEGO set with 1000 pieces"
+        item.image = image
         
         let item2 = NSEntityDescription.insertNewObjectForEntityForName("Item", inManagedObjectContext: ad.managedObjectContext) as! Item
         item2.title = "He-Man vs Skeletor"
         item2.price = 89.99
         item2.details = "Skeletor is the man! (kind of)"
+        item2.image = image
         
         let item3 = NSEntityDescription.insertNewObjectForEntityForName("Item", inManagedObjectContext: ad.managedObjectContext) as! Item
         item3.title = "Audi R8"

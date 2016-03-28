@@ -9,13 +9,15 @@
 import UIKit
 import CoreData
 
-class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
+class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var storePicker: UIPickerView!
     @IBOutlet weak var titleField: CustomTextField!
     @IBOutlet weak var priceField: CustomTextField!
     @IBOutlet weak var detailsField: CustomTextField!
+    @IBOutlet weak var itemImage: UIImageView!
 
+    var imagePicker: UIImagePickerController!
     var stores = [Store]()
     var itemToEdit: Item?
     
@@ -32,19 +34,27 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         priceField.delegate = self
         detailsField.delegate = self
         
+        imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+
+        
         getStores()
+        
+//        if stores.count == 0 {
+//            generateTestStores()
+//        }
         
         if itemToEdit != nil {
             loadItemData()
         }
-        
-        //generateTestStores()
-
     }
     
     override func viewWillAppear(animated: Bool) {
         getStores()
+        storePicker.reloadAllComponents()
     }
+    
+    // MARK: Dismiss Keyboard
     
     func dismissKeyboard() {
         view.endEditing(true)
@@ -56,6 +66,8 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         detailsField.resignFirstResponder()
         return true
     }
+    
+    // MARK: Load Data
     
     func loadItemData() {
         if let item = itemToEdit {
@@ -86,6 +98,10 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
                     
                 } while (index < stores.count)
             }
+            
+            if let image = item.image?.getItemImg() {
+                itemImage.image = image
+            }
         }
     }
     
@@ -96,9 +112,19 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             self.stores = try ad.managedObjectContext.executeFetchRequest(fetchRequest) as! [Store]
             self.storePicker.reloadAllComponents()
         } catch {
-            
+            let error = error as NSError
+            print("\(error), \(error.userInfo)")
         }
     }
+    
+    // MARK: Image Picker View
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        imagePicker.dismissViewControllerAnimated(true, completion: nil)
+        itemImage.image = image
+    }
+    
+    
+    // MARK: Store Picker View
 
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
@@ -127,28 +153,28 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         store2.name = "Walmart"
         
         let store3 = NSEntityDescription.insertNewObjectForEntityForName("Store", inManagedObjectContext: ad.managedObjectContext) as! Store
-        store3.name = "Scary Goth Club"
-        
-        let store4 = NSEntityDescription.insertNewObjectForEntityForName("Store", inManagedObjectContext: ad.managedObjectContext) as! Store
-        store4.name = "Best Buy"
-        
-        let store5 = NSEntityDescription.insertNewObjectForEntityForName("Store", inManagedObjectContext: ad.managedObjectContext) as! Store
-        store5.name = "Steve's Fish & Chips"
-        
-        let store6 = NSEntityDescription.insertNewObjectForEntityForName("Store", inManagedObjectContext: ad.managedObjectContext) as! Store
-        store6.name = "Aussie Panel Beater"
+        store3.name = "Best Buy"
         
         ad.saveContext() 
     }
     
+    
+    
     // MARK: IBActions
+    @IBAction func addImage(sender: UIButton) {
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
 
     @IBAction func savePressed(sender: AnyObject) {
         
         var item: Item!
+        var image: Image!
         
         if itemToEdit == nil {
             item = NSEntityDescription.insertNewObjectForEntityForName("Item", inManagedObjectContext: ad.managedObjectContext) as! Item
+            image = NSEntityDescription.insertNewObjectForEntityForName("Image", inManagedObjectContext: ad.managedObjectContext) as! Image
+            item.image = image
         } else {
             item = itemToEdit
         }
@@ -168,6 +194,10 @@ class ItemDetailsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         }
         
         item.store = stores[storePicker.selectedRowInComponent(0)]
+        
+        if let descImage = itemImage.image {
+            item.image?.setItemImage(descImage)
+        }
         
         ad.saveContext()
         self.navigationController?.popViewControllerAnimated(true)

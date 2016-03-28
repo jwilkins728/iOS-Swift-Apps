@@ -6,12 +6,21 @@
 //  Copyright © 2016 Teradek. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import CoreData
 
 
 class Image: NSManagedObject {
 
-// Insert code here to add functionality to your managed object subclass
+    func setItemImage(img: UIImage) {
+        self.image = img
+    }
+    
+    func getItemImg() -> UIImage {
+        if let img = self.image as? UIImage {
+            return img
+        }
+        return UIImage(named: "filler")!
+    }
 
 }
